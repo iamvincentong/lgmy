@@ -3,28 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LG Malaysia - Stay Tuned, We're Almost Ready</title>
+
+    <!--META INFORMATION-->
+    <meta property="og:title" content="Generative AI Shapes the Future" />
+    <meta
+      property="og:description"
+      content="Welcome to LG Team ITG! We are a dedicated team passionate about delivering top-notch home appliance solutions across Malaysia."
+    />
+    <meta
+      property="og:image"
+      content="https://lgmalaysia.com.my/assets/LG-Malaysia.png"
+    />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:type" content="image/png" />
+    <link rel="icon" type="/image/x-icon" href="./assets/LG-Malaysia.png" />
+    <link rel="shortcut icon" href="./assets/LG-Malaysia.png" />
+
+    <title>LG Team ITG Malaysia</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="background-overlay"></div>
+    <div class="header-img">
+      <img src="./assets/bg-img-v2.jpg" />
+    </div>
     <main>
       <div class="content-wrapper">
-        <header>
-          <h1>ITG SMART ENTERPRISE</h1>
-        </header>
         <section class="content">
           <h2>New website <br />coming soon.</h2>
           <p>Stay Tuned, We're Almost Ready</p>
         </section>
         <footer>
-          <div class="footer-column">
-            <h3>Location:</h3>
-            <p>
-              3-25-8 Taman Bukit Erskine, Persiaran Halia 3, 10470 Georgetown,
-              Penang.
-            </p>
-          </div>
           <div class="footer-column">
             <h3>Contacts:</h3>
             <p>
@@ -39,14 +48,59 @@
             </p>
           </div>
           <div class="footer-column">
+            <h3>Location:</h3>
+            <p>
+              L4-21(A), Melawati Mall, 355, Jalan Bandar Melawati, Pusat Bandar
+              Melawati, 53100 Kuala Lumpur.
+            </p>
+            <p>
+              No 8-L4-23A, Sunshine Mall @ Sunshine Central, Jin Thean Tek,
+              Bandar Baru Air Itam, 11500 Ayer Itam, Pulau Pinang
+            </p>
+            <p>
+              Lower Ground Floor (beside Old Town), Level 1-Lot E, 1st Avenue,
+              182 JIn Magazine, 10300 Georgetown, Penang.
+            </p>
+          </div>
+          <div class="footer-column">
             <h3>Follow us:</h3>
             <p>
-              <a href="#">Facebook</a>
-              <a href="#">Instagram</a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61561969156362"
+                target="_blank"
+                >Facebook</a
+              >
             </p>
           </div>
         </footer>
       </div>
     </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function adjustHeaderHeight() {
+          const headerImgContainer = document.querySelector(".header-img");
+          const headerImg = document.querySelector(".header-img img");
+
+          if (window.innerWidth <= 768) {
+            // Set the height of the .header-img element based on the img height plus 30px
+            headerImgContainer.style.height = `${
+              headerImg.clientHeight + 30
+            }px`;
+          } else {
+            // Reset the height to auto if the viewport is larger than 768px
+            headerImgContainer.style.height = "auto";
+          }
+        }
+
+        // Initial adjustment
+        adjustHeaderHeight();
+
+        // Adjust the height on window resize
+        window.addEventListener("resize", adjustHeaderHeight);
+
+        // Monitor changes to the image size and adjust accordingly
+        headerImg.addEventListener("load", adjustHeaderHeight);
+      });
+    </script>
   </body>
 </html>
